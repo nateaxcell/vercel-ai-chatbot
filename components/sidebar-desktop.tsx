@@ -2,9 +2,11 @@ import { Sidebar } from '@/components/sidebar'
 
 import { auth } from '@/auth'
 import { ChatHistory } from '@/components/chat-history'
+import { cookies } from 'next/headers'
 
 export async function SidebarDesktop() {
-  const session = await auth()
+  const cookieStore = cookies()
+  const session = await auth({ cookieStore })
 
   if (!session?.user?.id) {
     return null
