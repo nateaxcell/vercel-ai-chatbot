@@ -76,7 +76,7 @@ export function UserMenu({ user }: UserMenuProps) {
               className="inline-flex w-full items-center justify-between text-xs"
             >
               Vercel Homepage
-              <IconExternalLink className="ml-auto h-3 w-3" />
+              <IconExternalLink className="size-3 ml-auto" />
             </a>
           </DropdownMenuItem>
           <DropdownMenuItem onClick={signOut} className="text-xs">
