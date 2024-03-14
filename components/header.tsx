@@ -14,9 +14,11 @@ import { UserMenu } from '@/components/user-menu'
 import { SidebarMobile } from './sidebar-mobile'
 import { SidebarToggle } from './sidebar-toggle'
 import { ChatHistory } from './chat-history'
+import { cookies } from 'next/headers'
 
 async function UserOrLogin() {
-  const session = await auth()
+  const cookieStore = cookies()
+  const session = await auth({ cookieStore })
   return (
     <>
       {session?.user ? (
